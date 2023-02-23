@@ -1,3 +1,4 @@
-# react-basic-layout
+<b>How to Install</b>
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-basic-layout)
+npm install <br />
+npm start
