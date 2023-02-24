@@ -223,12 +223,13 @@ const Index = () => {
       {renderMenu}
       {renderMobileMenu}
       
-      <div className="mt-2">
-      <FormControl className={styles.formControl}>
+      {/* <div className="mt-2"> */}
+      {/* <FormControl className={styles.formControl}>
         <InputLabel htmlFor="age-simple">Source News</InputLabel>
         <Select value={sourceValue} onChange={handleChangeSource}>
+        <em>Top Headlines</em>
           <MenuItem value="headlines">
-            <em>Top Headlines</em>
+            
             {sources.map((source, i) => {
               return (
                 <MenuItem key={i} value={source.id}>
@@ -238,8 +239,19 @@ const Index = () => {
             })}
           </MenuItem>
         </Select>
-      </FormControl>
-      </div>
+      </FormControl> */}
+      {/* </div> */}
+
+      <select value={sourceValue} onChange={handleChangeSource}>
+          <option value="headlines">Top Headlines</option>
+          {sources.map((source, i) => {
+            return (
+              <option key={i} value={source.id}>
+                {source.name}
+              </option>
+            );
+          })}
+        </select>
 
       {searchValue != '' ? <SearchNews search={searchValue} /> : sourceValue == 'headlines' ? <Headlines /> : <News source={sourceValue} />}
     </div>
